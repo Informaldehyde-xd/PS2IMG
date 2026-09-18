@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="@string/app_name"
+        android:titleTextColor="#FFFFFF" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <Button android:id="@+id/btnNew" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="New Image" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnOpen" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Open .img" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnAddFiles" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Add Files" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnNewFolder" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="New Folder" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnDelete" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Delete Selected" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnSave" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Save As .img" android:layout_marginEnd="4dp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="No image loaded. Tap New Image or Open .img to begin."
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="#1A1A1A"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⬆ Up" />
+
+        <TextView
+            android:id="@+id/targetDirText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="📁 /" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:textSize="11sp"
+        android:textColor="#888888"
+        android:text="You're viewing this folder — New Folder / Add Files land here. Tap a folder to open it." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/emptyText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:text="This folder is empty" />
+
+</LinearLayout>

@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.PS2ImgManager" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+</resources>
