@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#FFFFFF">
+
+    <!-- ===================== Sidebar ===================== -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.36"
+        android:orientation="vertical"
+        android:background="#000000"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="20dp">
+
+        <include android:id="@+id/navHome" layout="@layout/item_nav" />
+        <include android:id="@+id/navNewImage" layout="@layout/item_nav" />
+        <include android:id="@+id/navOpenImage" layout="@layout/item_nav" />
+        <include android:id="@+id/navNewFolder" layout="@layout/item_nav" />
+        <include android:id="@+id/navDelete" layout="@layout/item_nav" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
+            android:background="#333333" />
+
+        <include android:id="@+id/navSettings" layout="@layout/item_nav" />
+
+    </LinearLayout>
+
+    <!-- ===================== Content ===================== -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.64"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/searchBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/bg_search_pill"
+            android:hint="🔍  Search this folder"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:singleLine="true"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:imeOptions="actionSearch" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingBottom="6dp">
+            <LinearLayout
+                android:id="@+id/breadcrumbRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center_vertical" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:text="No image loaded. Use New Image or Open Image on the left to begin." />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="4dp"
+            android:clipToPadding="false" />
+
+        <TextView
+            android:id="@+id/emptyText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="#AAAAAA"
+            android:textSize="14sp"
+            android:text="This folder is empty" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD" />
+
+        <!-- ===================== Bottom bar ===================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#F1F1F3"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout android:id="@+id/bottomHome" style="@style/BottomBarItem">
+                <TextView style="@style/BottomBarIcon" android:text="🏠" />
+                <TextView style="@style/BottomBarLabel" android:text="Home" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/bottomAdd" style="@style/BottomBarItem">
+                <TextView style="@style/BottomBarIcon" android:text="⬇" />
+                <TextView style="@style/BottomBarLabel" android:text="Add" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/bottomUp" style="@style/BottomBarItem">
+                <TextView style="@style/BottomBarIcon" android:text="⬆" />
+                <TextView style="@style/BottomBarLabel" android:text="Up" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/bottomSave" style="@style/BottomBarItem">
+                <TextView style="@style/BottomBarIcon" android:text="💾" />
+                <TextView style="@style/BottomBarLabel" android:text="Save" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
